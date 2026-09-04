@@ -7,33 +7,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 import streamlit as st
 import pandas as pd
 from dashboard.utils.data_loader import load_all_metrics, load_orders, load_customers, load_products, figure_path
-from dashboard.components.charts import revenue_trend_chart, orders_trend_chart, aov_trend_chart
-from dashboard.components.filters import apply_filters
+from dashboard.utils.theme import inject_global_css, render_page_header, render_section_header, render_empty_state
 from dashboard.utils.formatting import fmt_currency, fmt_number, fmt_pct
+from dashboard.components.charts import revenue_trend_chart, orders_trend_chart, aov_trend_chart, growth_rate_chart
+from dashboard.components.filters import apply_filters, count_active_filters
+from dashboard.components.header import render_app_header
 
 st.set_page_config(page_title="Sales & Growth", page_icon="📈", layout="wide")
-
-PAGE_CSS = """
-<style>
-.section-header {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #1a237e;
-    padding: 0.6rem 0 0.3rem;
-    border-bottom: 2px solid #e8eaf6;
-    margin-bottom: 0.5rem;
-}
-.growth-positive { color: #2e7d32; font-weight: 600; }
-.growth-negative { color: #c62828; font-weight: 600; }
-.empty-state {
-    text-align: center;
-    padding: 2rem;
-    color: #9e9e9e;
-    font-size: 1rem;
-}
-</style>
-"""
-st.markdown(PAGE_CSS, unsafe_allow_html=True)
+inject_global_css()
 
 metrics = st.session_state.get("metrics", load_all_metrics())
 orders = load_orders()
@@ -41,26 +22,62 @@ customers = load_customers()
 products = load_products()
 filters = st.session_state.get("filters", {})
 
+render_app_header(metrics)
+
 filtered_orders = apply_filters(orders, filters, customers)
 
 if filtered_orders.empty:
-    st.markdown('<div class="empty-state">No orders match the current filters. Try broadening your filter criteria.</div>', unsafe_allow_html=True)
+    render_empty_state("No matching records", "Try broadening the selected filters.")
     st.stop()
 
-st.markdown('<div class="section-header">Sales & Growth</div>', unsafe_allow_html=True)
+active_filters = count_active_filters(filters, orders)
+badge = f"{active_filters} filter{'s' if active_filters != 1 else ''} active" if active_filters > 0 else ""
+render_page_header("Sales & Growth", "Where is growth coming from?", badge=badge)
 
+# ── KPI Strip ───────────────────────────────────────────────────────────────
 monthly = metrics.get("monthly", [])
+if monthly:
+    latest = monthly[-1]
+    prev = monthly[-2] if len(monthly) > 1 else None
+    rev_delta = (latest.get("gross_revenue", 0) - prev.get("gross_revenue", 0)) / prev.get("gross_revenue", 1) if prev else None
+    orders_delta = (latest.get("orders", 0) - prev.get("orders", 0)) / prev.get("orders", 1) if prev else None
+    aov_delta = (latest.get("avg_order_value", 0) - prev.get("avg_order_value", 0)) / prev.get("avg_order_value", 1) if prev else None
+
+    kpi_cols = st.columns(4)
+    with kpi_cols[0]:
+        st.metric("Latest Revenue", fmt_currency(latest.get("gross_revenue", 0)), delta=fmt_pct(rev_delta) if rev_delta else None)
+    with kpi_cols[1]:
+        st.metric("Latest Orders", fmt_number(latest.get("orders", 0)), delta=fmt_pct(orders_delta) if orders_delta else None)
+    with kpi_cols[2]:
+        st.metric("Latest AOV", fmt_currency(latest.get("avg_order_value", 0)), delta=fmt_pct(aov_delta) if aov_delta else None)
+    with kpi_cols[3]:
+        total_rev = sum(m.get("gross_revenue", 0) for m in monthly)
+        st.metric("YTD Revenue", fmt_currency(total_rev))
+
+# ── Main Visualizations ─────────────────────────────────────────────────────
+render_section_header("Revenue & Orders Trend", icon="📈")
+
 if monthly:
     col1, col2 = st.columns(2)
     with col1:
         st.plotly_chart(revenue_trend_chart(monthly), use_container_width=True)
     with col2:
         st.plotly_chart(orders_trend_chart(monthly), use_container_width=True)
+
+    render_section_header("Average Order Value", icon="🎯")
     st.plotly_chart(aov_trend_chart(monthly), use_container_width=True)
 else:
-    st.markdown('<div class="empty-state">Monthly trend data not available.</div>', unsafe_allow_html=True)
+    render_empty_state("Monthly trend data not available")
 
-st.markdown('<div class="section-header">Month-over-Month Growth Rates</div>', unsafe_allow_html=True)
+# ── Growth Rate Analysis ────────────────────────────────────────────────────
+render_section_header("Growth Rate Analysis", icon="📊")
+
+if monthly:
+    st.plotly_chart(growth_rate_chart(monthly), use_container_width=True)
+
+# ── Growth Rates Table ──────────────────────────────────────────────────────
+render_section_header("Month-over-Month Growth Rates", icon="📋")
+
 if monthly:
     growth_data = []
     for m in monthly:
@@ -75,18 +92,12 @@ if monthly:
     growth_df = pd.DataFrame(growth_data)
     st.dataframe(growth_df, use_container_width=True, hide_index=True)
 else:
-    st.markdown('<div class="empty-state">Growth rate data not available.</div>', unsafe_allow_html=True)
+    render_empty_state("Growth rate data not available")
 
-st.markdown('<div class="section-header">Moving Average Trends</div>', unsafe_allow_html=True)
+# ── Moving Averages ─────────────────────────────────────────────────────────
+render_section_header("Moving Average Trends", icon="📉")
+
 if figure_path("monthly_trends.png").exists():
     st.image(figure_path("monthly_trends.png"), caption="Monthly Revenue & Orders with Moving Averages", use_container_width=True)
 else:
-    st.markdown('<div class="empty-state">Moving average figure not available.</div>', unsafe_allow_html=True)
-
-with st.expander("Methodology & Limitations"):
-    st.markdown("""
-    - Month-over-month growth is calculated sequentially; first month shows N/A.
-    - AOV is computed as gross revenue divided by orders per month.
-    - Moving averages smooth short-term fluctuations for trend visibility.
-    - Cancellations are excluded from completed order metrics.
-    """)
+    render_empty_state("Moving average figure not available")

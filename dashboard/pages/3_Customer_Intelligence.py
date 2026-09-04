@@ -7,32 +7,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 import streamlit as st
 import pandas as pd
 from dashboard.utils.data_loader import load_all_metrics, load_orders, load_customers, load_products, figure_path
+from dashboard.utils.theme import inject_global_css, render_page_header, render_section_header, render_empty_state
+from dashboard.utils.formatting import fmt_currency, fmt_number, fmt_pct
 from dashboard.components.charts import rfm_pie_chart, rfm_revenue_bar
 from dashboard.components.kpi_cards import render_segment_kpis
-from dashboard.components.filters import apply_filters
-from dashboard.utils.formatting import fmt_currency, fmt_number, fmt_pct
+from dashboard.components.filters import apply_filters, count_active_filters
+from dashboard.components.tables import render_styled_table
+from dashboard.components.header import render_app_header
 
 st.set_page_config(page_title="Customer Intelligence", page_icon="👥", layout="wide")
-
-PAGE_CSS = """
-<style>
-.section-header {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #1a237e;
-    padding: 0.6rem 0 0.3rem;
-    border-bottom: 2px solid #e8eaf6;
-    margin-bottom: 0.5rem;
-}
-.empty-state {
-    text-align: center;
-    padding: 2rem;
-    color: #9e9e9e;
-    font-size: 1rem;
-}
-</style>
-"""
-st.markdown(PAGE_CSS, unsafe_allow_html=True)
+inject_global_css()
 
 metrics = st.session_state.get("metrics", load_all_metrics())
 orders = load_orders()
@@ -40,14 +24,19 @@ customers = load_customers()
 products = load_products()
 filters = st.session_state.get("filters", {})
 
+render_app_header(metrics)
+
 filtered_orders = apply_filters(orders, filters, customers)
 
 if filtered_orders.empty:
-    st.markdown('<div class="empty-state">No orders match the current filters. Try broadening your filter criteria.</div>', unsafe_allow_html=True)
+    render_empty_state("No matching records", "Try broadening the selected filters.")
     st.stop()
 
-st.markdown('<div class="section-header">Customer Intelligence</div>', unsafe_allow_html=True)
+active_filters = count_active_filters(filters, orders)
+badge = f"{active_filters} filter{'s' if active_filters != 1 else ''} active" if active_filters > 0 else ""
+render_page_header("Customer Intelligence", "Who are our most valuable customers?", badge=badge)
 
+# ── Customer KPIs ───────────────────────────────────────────────────────────
 rfm = metrics.get("rfm", {})
 if rfm:
     render_segment_kpis(
@@ -56,9 +45,11 @@ if rfm:
         active_customers=rfm.get("active_customers", 0),
     )
 else:
-    st.markdown('<div class="empty-state">Customer metrics not available.</div>', unsafe_allow_html=True)
+    render_empty_state("Customer metrics not available")
 
-st.markdown('<div class="section-header">RFM Segment Distribution</div>', unsafe_allow_html=True)
+# ── RFM Segment Landscape ───────────────────────────────────────────────────
+render_section_header("RFM Segment Landscape", icon="👥")
+
 segments = rfm.get("segments", [])
 if segments:
     col1, col2 = st.columns(2)
@@ -67,9 +58,11 @@ if segments:
     with col2:
         st.plotly_chart(rfm_revenue_bar(segments), use_container_width=True)
 else:
-    st.markdown('<div class="empty-state">RFM segment data not available.</div>', unsafe_allow_html=True)
+    render_empty_state("RFM segment data not available")
 
-st.markdown('<div class="section-header">Segment Details</div>', unsafe_allow_html=True)
+# ── Customer Segment Economics ──────────────────────────────────────────────
+render_section_header("Customer Segment Economics", icon="💰")
+
 rfm_details = metrics.get("rfm_details", {})
 detail_segments = rfm_details.get("segments", [])
 if detail_segments:
@@ -80,20 +73,26 @@ if detail_segments:
                          "Avg Revenue", "Revenue Share %", "Description"]
     detail_df["Revenue Share %"] = detail_df["Revenue Share %"].apply(lambda x: fmt_pct(x / 100) if pd.notna(x) else "N/A")
     detail_df["Avg Revenue"] = detail_df["Avg Revenue"].apply(lambda x: fmt_currency(x))
-    st.dataframe(detail_df, use_container_width=True, hide_index=True)
-else:
-    st.markdown('<div class="empty-state">RFM segment details not available.</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="section-header">RFM Distribution</div>', unsafe_allow_html=True)
+    render_styled_table(
+        detail_df,
+        columns={
+            "Segment": "Segment",
+            "Customers": "Customers",
+            "Avg Recency (days)": "Avg Recency",
+            "Avg Frequency": "Avg Frequency",
+            "Avg Revenue": "Avg Revenue",
+            "Revenue Share %": "Rev Share",
+            "Description": "Description",
+        },
+    )
+else:
+    render_empty_state("RFM segment details not available")
+
+# ── RFM Distribution ────────────────────────────────────────────────────────
+render_section_header("RFM Score Distribution", icon="📊")
+
 if figure_path("rfm_distribution.png").exists():
     st.image(figure_path("rfm_distribution.png"), caption="RFM Score Distribution", use_container_width=True)
 else:
-    st.markdown('<div class="empty-state">RFM distribution figure not available.</div>', unsafe_allow_html=True)
-
-with st.expander("Methodology & Limitations"):
-    st.markdown("""
-    - RFM segmentation uses Recency (days since last order), Frequency (total orders), and Monetary (total revenue) scores.
-    - Segments are assigned based on percentile-based thresholds: Champions, Loyal, Potential Loyalists, New, At Risk, Lost, Others.
-    - No Orders segment includes customers with zero orders in the dataset.
-    - CLV equals cumulative monetary value per customer.
-    """)
+    render_empty_state("RFM distribution figure not available")

@@ -1,4 +1,4 @@
-"""CommerceIQ Analytics Dashboard - Main Entry Point."""
+"""CommerceIQ Analytics Dashboard - Premium Landing Page & Executive Command Center."""
 import sys
 from pathlib import Path
 
@@ -6,7 +6,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import streamlit as st
 from dashboard.utils.data_loader import load_all_metrics, load_orders, load_customers, load_products
+from dashboard.utils.theme import inject_global_css, render_section_header, COLORS
+from dashboard.utils.formatting import fmt_currency, fmt_number, fmt_pct
 from dashboard.components.filters import render_sidebar_filters
+from dashboard.components.header import render_app_header
+from dashboard.components.kpi_cards import render_kpi_row
 
 st.set_page_config(
     page_title="CommerceIQ Analytics",
@@ -15,115 +19,108 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── Custom CSS ──────────────────────────────────────────────────────────────
-st.markdown("""
-<style>
-    /* ── Global ─────────────────────────────────────────────────────── */
-    .stApp { background: #f8f9fb; }
+inject_global_css()
 
-    /* ── Sidebar ────────────────────────────────────────────────────── */
-    section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1a1f36 0%, #252b48 100%);
-    }
-    section[data-testid="stSidebar"] .stMarkdown h1,
-    section[data-testid="stSidebar"] .stMarkdown h2,
-    section[data-testid="stSidebar"] .stMarkdown h3 {
-        color: #e8eaf6;
-    }
-    section[data-testid="stSidebar"] .stMarkdown p,
-    section[data-testid="stSidebar"] .stMarkdown li,
-    section[data-testid="stSidebar"] label {
-        color: #c5cae9;
-    }
-    section[data-testid="stSidebar"] .stSelectbox label,
-    section[data-testid="stSidebar"] .stDateInput label {
-        color: #c5cae9 !important;
-        font-weight: 600;
-    }
-
-    /* ── KPI Cards ──────────────────────────────────────────────────── */
-    div[data-testid="stMetric"] {
-        background: #ffffff;
-        border: 1px solid #e8eaf6;
-        border-radius: 12px;
-        padding: 18px 22px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-        transition: box-shadow 0.2s ease;
-    }
-    div[data-testid="stMetric"]:hover {
-        box-shadow: 0 4px 16px rgba(33,150,243,0.12);
-    }
-    div[data-testid="stMetric"] label {
-        color: #5c6bc0;
-        font-weight: 600;
-        font-size: 0.82rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-    }
-    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
-        color: #1a237e;
-        font-weight: 700;
-        font-size: 1.55rem;
-    }
-    div[data-testid="stMetric"] div[data-testid="stMetricDelta"] {
-        font-weight: 600;
-    }
-
-    /* ── Section Headers ────────────────────────────────────────────── */
-    .section-header {
-        background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-        color: white;
-        padding: 14px 22px;
-        border-radius: 10px;
-        margin: 10px 0 18px 0;
-        font-size: 1.05rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-    }
-
-    /* ── DataFrames ─────────────────────────────────────────────────── */
-    .stDataFrame { border-radius: 10px; overflow: hidden; }
-
-    /* ── Expanders ──────────────────────────────────────────────────── */
-    .streamlit-expanderHeader {
-        font-weight: 600;
-        color: #283593;
-    }
-
-    /* ── Divider ────────────────────────────────────────────────────── */
-    hr { border: none; border-top: 1px solid #e8eaf6; margin: 1.2rem 0; }
-
-    /* ── Tabs ───────────────────────────────────────────────────────── */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 6px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        border-radius: 8px 8px 0 0;
-        padding: 8px 18px;
-        font-weight: 600;
-    }
-
-    /* ── Info/Warning boxes ─────────────────────────────────────────── */
-    div[data-testid="stAlert"] { border-radius: 10px; }
-
-    /* ── Plotly charts ──────────────────────────────────────────────── */
-    .stPlotlyChart { border-radius: 10px; overflow: hidden; }
-</style>
-""", unsafe_allow_html=True)
-
-# ── Data Loading ────────────────────────────────────────────────────────────
 metrics = load_all_metrics()
 orders = load_orders()
 customers = load_customers()
 products = load_products()
 
-# ── Sidebar ─────────────────────────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("## CommerceIQ")
-    st.caption("Analytics Dashboard")
-    st.markdown("---")
+render_app_header(metrics)
 
 filters = render_sidebar_filters(orders, customers)
-
 st.session_state["filters"] = filters
 st.session_state["metrics"] = metrics
+
+# ── Landing Header ──────────────────────────────────────────────────────────
+st.markdown(
+    '<div class="ciq-app-header">'
+    '<h1>CommerceIQ</h1>'
+    '<p class="ciq-subtitle">E-commerce Business Intelligence & Customer Analytics</p>'
+    '<div class="ciq-app-header-meta">'
+    '<div class="ciq-app-header-meta-item">'
+    '<span class="ciq-app-header-meta-dot"></span>'
+    'Analysis Period: 2024'
+    '</div>'
+    '<div class="ciq-app-header-meta-item">'
+    'Dataset: 12K orders &middot; 2K customers &middot; 120 products'
+    '</div>'
+    '<div class="ciq-app-header-meta-item">'
+    'Pipeline: 9-stage automated analytics'
+    '</div>'
+    '</div>'
+    '</div>',
+    unsafe_allow_html=True,
+)
+
+# ── Executive KPI Summary ──────────────────────────────────────────────────
+revenue = metrics.get("revenue", {})
+if revenue:
+    net_rev = revenue.get("total_net_revenue", 0)
+    gross_rev = revenue.get("total_gross_revenue", 0)
+    render_kpi_row([
+        {"label": "Total Orders", "value": revenue.get("total_orders", 0), "format": "number"},
+        {"label": "Gross Revenue", "value": gross_rev, "format": "currency",
+         "context": f"Net: {fmt_currency(net_rev)}"},
+        {"label": "Net Revenue", "value": net_rev, "format": "currency",
+         "context": f"{net_rev/gross_rev*100:.1f}% of gross revenue"},
+        {"label": "Active Customers", "value": metrics.get('rfm', {}).get('total_customers', 0), "format": "number"},
+    ])
+
+# ── Analytics Navigation ────────────────────────────────────────────────────
+render_section_header("Analytics Modules")
+
+nav_items = [
+    ("Executive Overview", "High-level business performance and key recommendations", "How is the business performing?"),
+    ("Sales & Growth", "Revenue trends, order patterns, and growth rate analysis", "Where is growth coming from?"),
+    ("Customer Intelligence", "RFM segmentation, customer lifecycle, and segment economics", "Who are our most valuable customers?"),
+    ("Product Intelligence", "Category performance, product margins, and revenue drivers", "Which products drive revenue and margin?"),
+    ("Regional Performance", "Country and channel analysis with market rankings", "Which markets and channels perform best?"),
+    ("Margin & Pricing", "Profitability analysis, cost structure, and pricing tiers", "Where are we making money?"),
+    ("Insights & Decisions", "Strategic recommendations, anomalies, and scenario analysis", "What should the business investigate or act on?"),
+    ("Methodology & Data Quality", "Pipeline architecture, validation, and data governance", "Can we trust the analysis?"),
+]
+
+nav_html = '<div class="ciq-nav-grid">'
+for title, desc, question in nav_items:
+    nav_html += (
+        f'<div class="ciq-nav-card">'
+        f'<h3>{title}</h3>'
+        f'<p>{desc}</p>'
+        f'<p style="margin:0.3rem 0 0;font-size:0.72rem;color:#3949ab;font-weight:600;font-style:italic;">{question}</p>'
+        f'</div>'
+    )
+nav_html += '</div>'
+st.markdown(nav_html, unsafe_allow_html=True)
+
+# ── Key Business Insights ───────────────────────────────────────────────────
+render_section_header("Key Business Insights")
+
+recs = metrics.get("recommendations", [])
+if recs:
+    high_recs = [r for r in recs if r.get("priority") == "High"]
+    if not high_recs:
+        high_recs = recs[:3]
+    for rec in high_recs[:3]:
+        finding = rec.get("finding", "N/A")
+        recommendation = rec.get("recommendation", "N/A")
+        category = rec.get("category", "General")
+        impact = rec.get("expected_impact", "")
+        impact_html = f'<span class="ciq-tag ciq-tag-success">{impact}</span>' if impact else ""
+        st.markdown(
+            f'<div class="ciq-insight">'
+            f'<h4>{category}</h4>'
+            f'<p><strong>Finding:</strong> {finding}</p>'
+            f'<p><strong>Recommendation:</strong> {recommendation}</p>'
+            f'{impact_html}'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+# ── Footer ──────────────────────────────────────────────────────────────────
+st.markdown(
+    '<div style="text-align:center;padding:1.2rem 0 0.5rem;color:#94a3b8;font-size:0.72rem;">'
+    'CommerceIQ Analytics Platform &mdash; End-to-end BI pipeline with SQL, statistical analysis, and ML-driven insights'
+    '</div>',
+    unsafe_allow_html=True,
+)
