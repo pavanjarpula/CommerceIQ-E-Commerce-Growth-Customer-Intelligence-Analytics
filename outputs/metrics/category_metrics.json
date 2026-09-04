@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "category": "Outdoors",
+      "total_revenue": 779953.89,
+      "total_units": 17861,
+      "total_margin": 391341.02,
+      "product_count": 24,
+      "avg_selling_price": 43.08,
+      "revenue_pct": 0.2125,
+      "margin_pct": 0.5017
+    },
+    {
+      "category": "Apparel",
+      "total_revenue": 765375.87,
+      "total_units": 18450,
+      "total_margin": 415393.57,
+      "product_count": 24,
+      "avg_selling_price": 40.73,
+      "revenue_pct": 0.2085,
+      "margin_pct": 0.5427
+    },
+    {
+      "category": "Home",
+      "total_revenue": 713237.63,
+      "total_units": 17929,
+      "total_margin": 372113.84,
+      "product_count": 24,
+      "avg_selling_price": 39.76,
+      "revenue_pct": 0.1943,
+      "margin_pct": 0.5217
+    },
+    {
+      "category": "Electronics",
+      "total_revenue": 511318.41,
+      "total_units": 14748,
+      "total_margin": 266442.86,
+      "product_count": 19,
+      "avg_selling_price": 34.62,
+      "revenue_pct": 0.1393,
+      "margin_pct": 0.5211
+    },
+    {
+      "category": "Toys",
+      "total_revenue": 464854.74,
+      "total_units": 9984,
+      "total_margin": 249393.48,
+      "product_count": 13,
+      "avg_selling_price": 46.65,
+      "revenue_pct": 0.1266,
+      "margin_pct": 0.5365
+    },
+    {
+      "category": "Beauty",
+      "total_revenue": 436324.98,
+      "total_units": 11537,
+      "total_margin": 244807.37,
+      "product_count": 16,
+      "avg_selling_price": 37.97,
+      "revenue_pct": 0.1189,
+      "margin_pct": 0.5611
+    }
+  ]
+}

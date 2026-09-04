@@ -1,0 +1,37 @@
+{
+  "recommendations": [
+    {
+      "category": "Customer Retention",
+      "priority": "High",
+      "finding": "213 customers classified as 'At Risk' with $380,583.40 in historical revenue.",
+      "recommendation": "Implement re-engagement campaigns targeting At Risk customers with personalized offers.",
+      "expected_impact": "Recovering 20% could recover ~$76,116.68 in revenue."
+    },
+    {
+      "category": "Customer Retention",
+      "priority": "Medium",
+      "finding": "468 customers classified as 'Lost' ($270,889.96 historical).",
+      "recommendation": "Evaluate win-back campaign ROI for high-value lost customers."
+    },
+    {
+      "category": "Channel Strategy",
+      "priority": "Medium",
+      "finding": "'email' has highest AOV ($321.52), 'affiliate' lowest.",
+      "recommendation": "Shift marketing spend toward 'email'. Investigate 'affiliate' audience targeting."
+    },
+    {
+      "category": "Geographic Strategy",
+      "priority": "Low",
+      "finding": "'US' leads revenue ($1,065,984.19), 'SE' lags.",
+      "recommendation": "Investigate barriers in 'SE'. Consider localized marketing."
+    },
+    {
+      "category": "VIP Program",
+      "priority": "High",
+      "finding": "Champions represent 336 customers but $964,769.35 (39%) of revenue.",
+      "recommendation": "Launch exclusive loyalty program for Champions with early access and premium perks.",
+      "expected_impact": "Improving Champion retention by 5% could add ~$48,238.47."
+    }
+  ],
+  "total": 5
+}

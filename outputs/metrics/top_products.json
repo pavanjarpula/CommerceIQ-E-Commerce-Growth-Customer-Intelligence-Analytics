@@ -1,0 +1,94 @@
+{
+  "top_products": [
+    {
+      "product_id": 33,
+      "product_name": "SKU-0033",
+      "category": "Toys",
+      "total_revenue": 93811.51,
+      "total_units_sold": 900,
+      "product_margin_total": 56259.0,
+      "margin_pct": 0.5695
+    },
+    {
+      "product_id": 51,
+      "product_name": "SKU-0051",
+      "category": "Outdoors",
+      "total_revenue": 85263.3,
+      "total_units_sold": 812,
+      "product_margin_total": 37855.44,
+      "margin_pct": 0.4224
+    },
+    {
+      "product_id": 95,
+      "product_name": "SKU-0095",
+      "category": "Outdoors",
+      "total_revenue": 82907.17,
+      "total_units_sold": 787,
+      "product_margin_total": 31700.36,
+      "margin_pct": 0.3627
+    },
+    {
+      "product_id": 38,
+      "product_name": "SKU-0038",
+      "category": "Outdoors",
+      "total_revenue": 79782.05,
+      "total_units_sold": 706,
+      "product_margin_total": 34516.34,
+      "margin_pct": 0.4099
+    },
+    {
+      "product_id": 66,
+      "product_name": "SKU-0066",
+      "category": "Apparel",
+      "total_revenue": 78668.33,
+      "total_units_sold": 840,
+      "product_margin_total": 37716.0,
+      "margin_pct": 0.454
+    },
+    {
+      "product_id": 5,
+      "product_name": "SKU-0005",
+      "category": "Apparel",
+      "total_revenue": 75488.59,
+      "total_units_sold": 835,
+      "product_margin_total": 29233.35,
+      "margin_pct": 0.3687
+    },
+    {
+      "product_id": 81,
+      "product_name": "SKU-0081",
+      "category": "Apparel",
+      "total_revenue": 68168.17,
+      "total_units_sold": 844,
+      "product_margin_total": 44892.36,
+      "margin_pct": 0.6264
+    },
+    {
+      "product_id": 116,
+      "product_name": "SKU-0116",
+      "category": "Toys",
+      "total_revenue": 67082.43,
+      "total_units_sold": 723,
+      "product_margin_total": 27690.9,
+      "margin_pct": 0.3927
+    },
+    {
+      "product_id": 10,
+      "product_name": "SKU-0010",
+      "category": "Toys",
+      "total_revenue": 58484.94,
+      "total_units_sold": 769,
+      "product_margin_total": 32597.91,
+      "margin_pct": 0.5306
+    },
+    {
+      "product_id": 96,
+      "product_name": "SKU-0096",
+      "category": "Outdoors",
+      "total_revenue": 58248.52,
+      "total_units_sold": 775,
+      "product_margin_total": 37479.0,
+      "margin_pct": 0.6106
+    }
+  ]
+}

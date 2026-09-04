@@ -15,16 +15,8 @@ env/
 *.sqlite3
 data/raw/*
 !data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-outputs/metrics/*
-!outputs/metrics/.gitkeep
-outputs/figures/*
-!outputs/figures/.gitkeep
 outputs/sql_results/*
 !outputs/sql_results/.gitkeep
-outputs/reports/*
-!outputs/reports/.gitkeep
 .ipynb_checkpoints/
 *.log
 .DS_Store

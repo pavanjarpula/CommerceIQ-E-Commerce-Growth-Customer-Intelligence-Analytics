@@ -1,0 +1,17 @@
+{
+  "total_orders": 12000,
+  "completed_orders": 8015,
+  "refunded_orders": 1980,
+  "cancelled_orders": 2005,
+  "completion_rate": 0.6679,
+  "refund_rate": 0.165,
+  "cancellation_rate": 0.1671,
+  "total_gross_revenue": 3671065.52,
+  "total_net_revenue": 2461333.56,
+  "total_gross_margin": 1172816.4,
+  "margin_pct": 0.3195,
+  "avg_order_value": 307.09,
+  "avg_order_margin": 146.33,
+  "total_refund_revenue": 596584.5,
+  "avg_items_per_order": 2.52
+}

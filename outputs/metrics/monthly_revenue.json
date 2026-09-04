@@ -1,0 +1,136 @@
+{
+  "monthly": [
+    {
+      "order_month": "2024-01",
+      "orders": 31,
+      "gross_revenue": 9341.61,
+      "net_revenue": 9341.61,
+      "avg_order_value": 301.34,
+      "margin": 4513.86,
+      "avg_items": 2.58,
+      "revenue_mom_growth": NaN,
+      "orders_mom_growth": NaN
+    },
+    {
+      "order_month": "2024-02",
+      "orders": 87,
+      "gross_revenue": 30016.44,
+      "net_revenue": 30016.44,
+      "avg_order_value": 345.02,
+      "margin": 14678.83,
+      "avg_items": 2.57,
+      "revenue_mom_growth": 2.2132,
+      "orders_mom_growth": 1.8065
+    },
+    {
+      "order_month": "2024-03",
+      "orders": 156,
+      "gross_revenue": 50179.75,
+      "net_revenue": 50179.75,
+      "avg_order_value": 321.67,
+      "margin": 23317.25,
+      "avg_items": 2.62,
+      "revenue_mom_growth": 0.6717,
+      "orders_mom_growth": 0.7931
+    },
+    {
+      "order_month": "2024-04",
+      "orders": 243,
+      "gross_revenue": 79562.03,
+      "net_revenue": 79562.03,
+      "avg_order_value": 327.42,
+      "margin": 37601.63,
+      "avg_items": 2.59,
+      "revenue_mom_growth": 0.5855,
+      "orders_mom_growth": 0.5577
+    },
+    {
+      "order_month": "2024-05",
+      "orders": 304,
+      "gross_revenue": 89187.41,
+      "net_revenue": 89187.41,
+      "avg_order_value": 293.38,
+      "margin": 42939.05,
+      "avg_items": 2.46,
+      "revenue_mom_growth": 0.121,
+      "orders_mom_growth": 0.251
+    },
+    {
+      "order_month": "2024-06",
+      "orders": 393,
+      "gross_revenue": 127368.22,
+      "net_revenue": 127368.22,
+      "avg_order_value": 324.09,
+      "margin": 60891.75,
+      "avg_items": 2.53,
+      "revenue_mom_growth": 0.4281,
+      "orders_mom_growth": 0.2928
+    },
+    {
+      "order_month": "2024-07",
+      "orders": 533,
+      "gross_revenue": 161680.62,
+      "net_revenue": 161680.62,
+      "avg_order_value": 303.34,
+      "margin": 76574.86,
+      "avg_items": 2.46,
+      "revenue_mom_growth": 0.2694,
+      "orders_mom_growth": 0.3562
+    },
+    {
+      "order_month": "2024-08",
+      "orders": 701,
+      "gross_revenue": 218295.6,
+      "net_revenue": 218295.6,
+      "avg_order_value": 311.41,
+      "margin": 103902.46,
+      "avg_items": 2.56,
+      "revenue_mom_growth": 0.3502,
+      "orders_mom_growth": 0.3152
+    },
+    {
+      "order_month": "2024-09",
+      "orders": 814,
+      "gross_revenue": 250910.87,
+      "net_revenue": 250910.87,
+      "avg_order_value": 308.24,
+      "margin": 119141.52,
+      "avg_items": 2.56,
+      "revenue_mom_growth": 0.1494,
+      "orders_mom_growth": 0.1612
+    },
+    {
+      "order_month": "2024-10",
+      "orders": 997,
+      "gross_revenue": 299751.7,
+      "net_revenue": 299751.7,
+      "avg_order_value": 300.65,
+      "margin": 142437.2,
+      "avg_items": 2.49,
+      "revenue_mom_growth": 0.1947,
+      "orders_mom_growth": 0.2248
+    },
+    {
+      "order_month": "2024-11",
+      "orders": 1434,
+      "gross_revenue": 436669.4,
+      "net_revenue": 436669.4,
+      "avg_order_value": 304.51,
+      "margin": 207968.47,
+      "avg_items": 2.51,
+      "revenue_mom_growth": 0.4568,
+      "orders_mom_growth": 0.4383
+    },
+    {
+      "order_month": "2024-12",
+      "orders": 2322,
+      "gross_revenue": 708369.91,
+      "net_revenue": 708369.91,
+      "avg_order_value": 305.07,
+      "margin": 338849.52,
+      "avg_items": 2.5,
+      "revenue_mom_growth": 0.6222,
+      "orders_mom_growth": 0.6192
+    }
+  ]
+}

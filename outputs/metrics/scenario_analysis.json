@@ -1,0 +1,114 @@
+{
+  "channel_roi": [
+    {
+      "channel": "social",
+      "total_orders": 1382,
+      "total_revenue": 424662.11,
+      "total_margin": 202042.56,
+      "avg_order_value": 307.28,
+      "unique_customers": 280,
+      "revenue_per_customer": 1516.65,
+      "margin_per_customer": 721.58
+    },
+    {
+      "channel": "email",
+      "total_orders": 971,
+      "total_revenue": 312199.86,
+      "total_margin": 147623.13,
+      "avg_order_value": 321.52,
+      "unique_customers": 213,
+      "revenue_per_customer": 1465.73,
+      "margin_per_customer": 693.07
+    },
+    {
+      "channel": "referral",
+      "total_orders": 768,
+      "total_revenue": 239450.52,
+      "total_margin": 114682.86,
+      "avg_order_value": 311.78,
+      "unique_customers": 164,
+      "revenue_per_customer": 1460.06,
+      "margin_per_customer": 699.29
+    },
+    {
+      "channel": "paid_search",
+      "total_orders": 1884,
+      "total_revenue": 565744.91,
+      "total_margin": 270678.27,
+      "avg_order_value": 300.29,
+      "unique_customers": 398,
+      "revenue_per_customer": 1421.47,
+      "margin_per_customer": 680.1
+    },
+    {
+      "channel": "affiliate",
+      "total_orders": 445,
+      "total_revenue": 132504.73,
+      "total_margin": 63447.23,
+      "avg_order_value": 297.76,
+      "unique_customers": 95,
+      "revenue_per_customer": 1394.79,
+      "margin_per_customer": 667.87
+    },
+    {
+      "channel": "organic",
+      "total_orders": 2565,
+      "total_revenue": 786771.43,
+      "total_margin": 374342.35,
+      "avg_order_value": 306.73,
+      "unique_customers": 575,
+      "revenue_per_customer": 1368.3,
+      "margin_per_customer": 651.03
+    }
+  ],
+  "category_profitability": [
+    {
+      "category": "Apparel",
+      "total_revenue": 765375.87,
+      "total_margin": 415393.57,
+      "product_count": 24,
+      "avg_margin_pct": 0.5246,
+      "revenue_per_product": 31890.66
+    },
+    {
+      "category": "Outdoors",
+      "total_revenue": 779953.89,
+      "total_margin": 391341.02,
+      "product_count": 24,
+      "avg_margin_pct": 0.4853,
+      "revenue_per_product": 32498.08
+    },
+    {
+      "category": "Home",
+      "total_revenue": 713237.63,
+      "total_margin": 372113.84,
+      "product_count": 24,
+      "avg_margin_pct": 0.506,
+      "revenue_per_product": 29718.23
+    },
+    {
+      "category": "Electronics",
+      "total_revenue": 511318.41,
+      "total_margin": 266442.86,
+      "product_count": 19,
+      "avg_margin_pct": 0.4912,
+      "revenue_per_product": 26911.5
+    },
+    {
+      "category": "Toys",
+      "total_revenue": 464854.74,
+      "total_margin": 249393.48,
+      "product_count": 13,
+      "avg_margin_pct": 0.5158,
+      "revenue_per_product": 35758.06
+    },
+    {
+      "category": "Beauty",
+      "total_revenue": 436324.98,
+      "total_margin": 244807.37,
+      "product_count": 16,
+      "avg_margin_pct": 0.5234,
+      "revenue_per_product": 27270.31
+    }
+  ]
+}

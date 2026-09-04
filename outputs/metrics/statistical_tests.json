@@ -1,0 +1,20 @@
+{
+  "channel_aov_test": {
+    "test": "Kruskal-Wallis",
+    "statistic": 7.4504,
+    "p_value": 0.189242,
+    "significant": false
+  },
+  "country_aov_test": {
+    "test": "Kruskal-Wallis",
+    "statistic": 12.5676,
+    "p_value": 0.08337,
+    "significant": false
+  },
+  "revenue_normality": {
+    "test": "Shapiro-Wilk",
+    "statistic": 0.9415,
+    "p_value": 0.0,
+    "normal": false
+  }
+}

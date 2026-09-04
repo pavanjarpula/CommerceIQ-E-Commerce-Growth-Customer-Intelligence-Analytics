@@ -1,0 +1,72 @@
+{
+  "segments": [
+    {
+      "rfm_segment": "At Risk",
+      "customer_count": 213,
+      "avg_revenue": 1786.78,
+      "avg_orders": 5.91,
+      "total_revenue": 380583.4,
+      "revenue_pct": 0.1546
+    },
+    {
+      "rfm_segment": "Champions",
+      "customer_count": 336,
+      "avg_revenue": 2871.34,
+      "avg_orders": 9.21,
+      "total_revenue": 964769.35,
+      "revenue_pct": 0.392
+    },
+    {
+      "rfm_segment": "Lost",
+      "customer_count": 468,
+      "avg_revenue": 578.82,
+      "avg_orders": 1.77,
+      "total_revenue": 270889.96,
+      "revenue_pct": 0.1101
+    },
+    {
+      "rfm_segment": "Loyal Customers",
+      "customer_count": 316,
+      "avg_revenue": 1884.18,
+      "avg_orders": 6.06,
+      "total_revenue": 595399.37,
+      "revenue_pct": 0.2419
+    },
+    {
+      "rfm_segment": "New Customers",
+      "customer_count": 202,
+      "avg_revenue": 640.92,
+      "avg_orders": 2.09,
+      "total_revenue": 129466.52,
+      "revenue_pct": 0.0526
+    },
+    {
+      "rfm_segment": "No Orders",
+      "customer_count": 275,
+      "avg_revenue": 0.0,
+      "avg_orders": 0.0,
+      "total_revenue": 0.0,
+      "revenue_pct": 0.0
+    },
+    {
+      "rfm_segment": "Others",
+      "customer_count": 102,
+      "avg_revenue": 440.99,
+      "avg_orders": 1.79,
+      "total_revenue": 44981.16,
+      "revenue_pct": 0.0183
+    },
+    {
+      "rfm_segment": "Potential Loyalists",
+      "customer_count": 88,
+      "avg_revenue": 855.04,
+      "avg_orders": 3.55,
+      "total_revenue": 75243.8,
+      "revenue_pct": 0.0306
+    }
+  ],
+  "total_customers": 2000,
+  "active_customers": 1725,
+  "avg_clv": 1230.67,
+  "median_clv": 938.45
+}

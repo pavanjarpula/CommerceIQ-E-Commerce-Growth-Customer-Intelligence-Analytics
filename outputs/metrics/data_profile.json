@@ -1,0 +1,370 @@
+{
+  "customers": {
+    "rows": 2000,
+    "columns": 4,
+    "column_profiles": {
+      "customer_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 2000,
+        "mean": 1000.5,
+        "std": 577.4946,
+        "min": 1.0,
+        "q25": 500.75,
+        "median": 1000.5,
+        "q75": 1500.25,
+        "max": 2000.0
+      },
+      "signup_date": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 362,
+        "top_values": {
+          "2024-12-17": 12,
+          "2024-06-13": 12,
+          "2024-08-20": 12,
+          "2024-04-26": 11,
+          "2024-07-13": 11
+        }
+      },
+      "channel": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 6,
+        "top_values": {
+          "organic": 679,
+          "paid_search": 454,
+          "social": 332,
+          "email": 245,
+          "referral": 185
+        }
+      },
+      "country": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 8,
+        "top_values": {
+          "US": 863,
+          "GB": 294,
+          "DE": 193,
+          "CA": 177,
+          "FR": 159
+        }
+      }
+    },
+    "numeric_columns": [
+      "customer_id"
+    ],
+    "categorical_columns": [
+      "signup_date",
+      "channel",
+      "country"
+    ],
+    "date_columns": [
+      "signup_date"
+    ],
+    "memory_mb": 0.33
+  },
+  "products": {
+    "rows": 120,
+    "columns": 5,
+    "column_profiles": {
+      "product_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 120,
+        "mean": 60.5,
+        "std": 34.7851,
+        "min": 1.0,
+        "q25": 30.75,
+        "median": 60.5,
+        "q75": 90.25,
+        "max": 120.0
+      },
+      "product_name": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 120,
+        "top_values": {
+          "SKU-0001": 1,
+          "SKU-0002": 1,
+          "SKU-0089": 1,
+          "SKU-0088": 1,
+          "SKU-0087": 1
+        }
+      },
+      "category": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 6,
+        "top_values": {
+          "Outdoors": 24,
+          "Apparel": 24,
+          "Home": 24,
+          "Electronics": 19,
+          "Beauty": 16
+        }
+      },
+      "unit_price": {
+        "dtype": "float64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 120,
+        "mean": 42.4259,
+        "std": 25.1608,
+        "min": 8.75,
+        "q25": 21.82,
+        "median": 37.335,
+        "q75": 57.1775,
+        "max": 119.27
+      },
+      "unit_cost": {
+        "dtype": "float64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 116,
+        "mean": 21.1793,
+        "std": 14.1113,
+        "min": 3.53,
+        "q25": 10.4725,
+        "median": 17.345,
+        "q75": 27.94,
+        "max": 70.78
+      }
+    },
+    "numeric_columns": [
+      "product_id",
+      "unit_price",
+      "unit_cost"
+    ],
+    "categorical_columns": [
+      "product_name",
+      "category"
+    ],
+    "date_columns": [],
+    "memory_mb": 0.02
+  },
+  "orders": {
+    "rows": 12000,
+    "columns": 4,
+    "column_profiles": {
+      "order_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 12000,
+        "mean": 6000.5,
+        "std": 3464.2459,
+        "min": 1.0,
+        "q25": 3000.75,
+        "median": 6000.5,
+        "q75": 9000.25,
+        "max": 12000.0
+      },
+      "customer_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 1831,
+        "mean": 983.9607,
+        "std": 581.4539,
+        "min": 1.0,
+        "q25": 470.0,
+        "median": 972.0,
+        "q75": 1496.0,
+        "max": 2000.0
+      },
+      "order_ts": {
+        "dtype": "datetime64[ns]",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 11997
+      },
+      "status": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 3,
+        "top_values": {
+          "completed": 8015,
+          "cancelled": 2005,
+          "refunded": 1980
+        }
+      }
+    },
+    "numeric_columns": [
+      "order_id",
+      "customer_id"
+    ],
+    "categorical_columns": [
+      "status"
+    ],
+    "date_columns": [
+      "order_ts"
+    ],
+    "memory_mb": 1.03
+  },
+  "order_items": {
+    "rows": 30120,
+    "columns": 5,
+    "column_profiles": {
+      "order_item_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 30120,
+        "mean": 15060.5,
+        "std": 8695.0394,
+        "min": 1.0,
+        "q25": 7530.75,
+        "median": 15060.5,
+        "q75": 22590.25,
+        "max": 30120.0
+      },
+      "order_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 12000,
+        "mean": 5976.0437,
+        "std": 3466.7381,
+        "min": 1.0,
+        "q25": 2976.75,
+        "median": 5959.0,
+        "q75": 8976.25,
+        "max": 12000.0
+      },
+      "product_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 120,
+        "mean": 60.6752,
+        "std": 34.669,
+        "min": 1.0,
+        "q25": 31.0,
+        "median": 61.0,
+        "q75": 91.0,
+        "max": 120.0
+      },
+      "quantity": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 5,
+        "mean": 3.0049,
+        "std": 1.4113,
+        "min": 1.0,
+        "q25": 2.0,
+        "median": 3.0,
+        "q75": 4.0,
+        "max": 5.0
+      },
+      "unit_price": {
+        "dtype": "float64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 8087,
+        "mean": 40.633,
+        "std": 24.117,
+        "min": 7.88,
+        "q25": 20.54,
+        "median": 35.895,
+        "q75": 56.405,
+        "max": 119.0
+      }
+    },
+    "numeric_columns": [
+      "order_item_id",
+      "order_id",
+      "product_id",
+      "quantity",
+      "unit_price"
+    ],
+    "categorical_columns": [],
+    "date_columns": [],
+    "memory_mb": 1.15
+  },
+  "events": {
+    "rows": 59599,
+    "columns": 5,
+    "column_profiles": {
+      "event_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 59599,
+        "mean": 29800.0,
+        "std": 17204.8937,
+        "min": 1.0,
+        "q25": 14900.5,
+        "median": 29800.0,
+        "q75": 44699.5,
+        "max": 59599.0
+      },
+      "session_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 24045,
+        "mean": 12448.3796,
+        "std": 8096.9185,
+        "min": 1.0,
+        "q25": 5480.0,
+        "median": 11153.0,
+        "q75": 19315.5,
+        "max": 28030.0
+      },
+      "customer_id": {
+        "dtype": "int64",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 1811,
+        "mean": 992.1999,
+        "std": 581.0422,
+        "min": 1.0,
+        "q25": 476.0,
+        "median": 981.0,
+        "q75": 1502.0,
+        "max": 2000.0
+      },
+      "event_type": {
+        "dtype": "object",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 4,
+        "top_values": {
+          "view": 24045,
+          "add_to_cart": 16863,
+          "checkout": 10676,
+          "purchase": 8015
+        }
+      },
+      "event_ts": {
+        "dtype": "datetime64[ns]",
+        "null_count": 0,
+        "null_pct": 0.0,
+        "distinct": 59529
+      }
+    },
+    "numeric_columns": [
+      "event_id",
+      "session_id",
+      "customer_id"
+    ],
+    "categorical_columns": [
+      "event_type"
+    ],
+    "date_columns": [
+      "event_ts"
+    ],
+    "memory_mb": 5.47
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "segments": [
+    {
+      "rfm_segment": "At Risk",
+      "customer_count": 213,
+      "avg_recency": 73,
+      "avg_frequency": 5.9,
+      "avg_monetary": 1786.78,
+      "total_revenue": 380583.4,
+      "total_margin": 180609.82,
+      "avg_clv": 1786.78,
+      "median_clv": 1625.53,
+      "revenue_share": 15.5,
+      "description": "Used to buy frequently but haven't returned recently. Win back with re-engagement."
+    },
+    {
+      "rfm_segment": "Champions",
+      "customer_count": 336,
+      "avg_recency": 5,
+      "avg_frequency": 9.2,
+      "avg_monetary": 2871.34,
+      "total_revenue": 964769.35,
+      "total_margin": 461013.28,
+      "avg_clv": 2871.34,
+      "median_clv": 2630.4,
+      "revenue_share": 39.2,
+      "description": "Best customers: recent, frequent, high spenders. Reward them with loyalty programs."
+    },
+    {
+      "rfm_segment": "Lost",
+      "customer_count": 468,
+      "avg_recency": 115,
+      "avg_frequency": 1.8,
+      "avg_monetary": 578.82,
+      "total_revenue": 270889.96,
+      "total_margin": 128629.65,
+      "avg_clv": 578.82,
+      "median_clv": 521.3,
+      "revenue_share": 11.0,
+      "description": "Haven't purchased in a long time with low frequency. Reactivation campaigns needed."
+    },
+    {
+      "rfm_segment": "Loyal Customers",
+      "customer_count": 316,
+      "avg_recency": 18,
+      "avg_frequency": 6.1,
+      "avg_monetary": 1884.18,
+      "total_revenue": 595399.37,
+      "total_margin": 283382.96,
+      "avg_clv": 1884.18,
+      "median_clv": 1632.68,
+      "revenue_share": 24.2,
+      "description": "Regular buyers with good frequency and spend. Upsell premium products."
+    },
+    {
+      "rfm_segment": "New Customers",
+      "customer_count": 202,
+      "avg_recency": 7,
+      "avg_frequency": 2.1,
+      "avg_monetary": 640.92,
+      "total_revenue": 129466.52,
+      "total_margin": 61332.4,
+      "avg_clv": 640.92,
+      "median_clv": 579.78,
+      "revenue_share": 5.3,
+      "description": "Just signed up, recent first purchase. Onboard with welcome sequences."
+    },
+    {
+      "rfm_segment": "Others",
+      "customer_count": 102,
+      "avg_recency": 27,
+      "avg_frequency": 1.8,
+      "avg_monetary": 440.99,
+      "total_revenue": 44981.16,
+      "total_margin": 21367.26,
+      "avg_clv": 440.99,
+      "median_clv": 420.1,
+      "revenue_share": 1.8,
+      "description": "Customers who don't fit standard RFM segments clearly."
+    },
+    {
+      "rfm_segment": "Potential Loyalists",
+      "customer_count": 88,
+      "avg_recency": 20,
+      "avg_frequency": 3.5,
+      "avg_monetary": 855.04,
+      "total_revenue": 75243.8,
+      "total_margin": 36481.03,
+      "avg_clv": 855.04,
+      "median_clv": 802.26,
+      "revenue_share": 3.1,
+      "description": "Recent buyers with moderate spend. Nurture with targeted campaigns."
+    }
+  ],
+  "total_customers": 2000,
+  "active_customers": 1725
+}

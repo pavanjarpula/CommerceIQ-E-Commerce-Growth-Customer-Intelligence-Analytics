@@ -1,0 +1,76 @@
+{
+  "countries": [
+    {
+      "country": "US",
+      "total_orders": 3503,
+      "total_revenue": 1065984.19,
+      "total_margin": 506155.82,
+      "avg_order_value": 304.31,
+      "unique_customers": 739,
+      "revenue_pct": 0.4331
+    },
+    {
+      "country": "GB",
+      "total_orders": 1202,
+      "total_revenue": 374888.02,
+      "total_margin": 178907.36,
+      "avg_order_value": 311.89,
+      "unique_customers": 256,
+      "revenue_pct": 0.1523
+    },
+    {
+      "country": "CA",
+      "total_orders": 723,
+      "total_revenue": 234450.77,
+      "total_margin": 112093.04,
+      "avg_order_value": 324.27,
+      "unique_customers": 157,
+      "revenue_pct": 0.0953
+    },
+    {
+      "country": "DE",
+      "total_orders": 668,
+      "total_revenue": 200494.02,
+      "total_margin": 95943.27,
+      "avg_order_value": 300.14,
+      "unique_customers": 160,
+      "revenue_pct": 0.0815
+    },
+    {
+      "country": "AU",
+      "total_orders": 596,
+      "total_revenue": 176464.3,
+      "total_margin": 83753.41,
+      "avg_order_value": 296.08,
+      "unique_customers": 112,
+      "revenue_pct": 0.0717
+    },
+    {
+      "country": "FR",
+      "total_orders": 522,
+      "total_revenue": 164160.94,
+      "total_margin": 78439.61,
+      "avg_order_value": 314.48,
+      "unique_customers": 136,
+      "revenue_pct": 0.0667
+    },
+    {
+      "country": "NL",
+      "total_orders": 501,
+      "total_revenue": 149189.17,
+      "total_margin": 71374.43,
+      "avg_order_value": 297.78,
+      "unique_customers": 104,
+      "revenue_pct": 0.0606
+    },
+    {
+      "country": "SE",
+      "total_orders": 300,
+      "total_revenue": 95702.15,
+      "total_margin": 46149.46,
+      "avg_order_value": 319.01,
+      "unique_customers": 61,
+      "revenue_pct": 0.0389
+    }
+  ]
+}

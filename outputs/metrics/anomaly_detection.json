@@ -1,0 +1,251 @@
+{
+  "daily": {
+    "revenue": {
+      "iqr": {
+        "q1": 2194.69,
+        "q3": 9499.065,
+        "iqr": 7304.375,
+        "lower": -8761.8725,
+        "upper": 20455.6275,
+        "anomaly_count": 18
+      },
+      "zscore": {
+        "mean": 6992.4249,
+        "std": 6719.272,
+        "threshold": 3.0,
+        "anomaly_count": 6
+      },
+      "anomalous_days": [
+        {
+          "order_date": "2024-12-10",
+          "revenue": 22204.71,
+          "orders": 57,
+          "avg_order_value": 389.5563157894737
+        },
+        {
+          "order_date": "2024-12-11",
+          "revenue": 23017.27,
+          "orders": 68,
+          "avg_order_value": 338.48926470588236
+        },
+        {
+          "order_date": "2024-12-12",
+          "revenue": 21609.33,
+          "orders": 75,
+          "avg_order_value": 288.12440000000004
+        },
+        {
+          "order_date": "2024-12-13",
+          "revenue": 20937.87,
+          "orders": 65,
+          "avg_order_value": 322.1210769230769
+        },
+        {
+          "order_date": "2024-12-15",
+          "revenue": 23922.99,
+          "orders": 75,
+          "avg_order_value": 318.9732
+        },
+        {
+          "order_date": "2024-12-17",
+          "revenue": 23589.99,
+          "orders": 71,
+          "avg_order_value": 332.25338028169017
+        },
+        {
+          "order_date": "2024-12-18",
+          "revenue": 20987.94,
+          "orders": 74,
+          "avg_order_value": 283.6208108108108
+        },
+        {
+          "order_date": "2024-12-20",
+          "revenue": 31466.97,
+          "orders": 104,
+          "avg_order_value": 302.56701923076923
+        },
+        {
+          "order_date": "2024-12-22",
+          "revenue": 26744.7,
+          "orders": 91,
+          "avg_order_value": 293.8978021978022
+        },
+        {
+          "order_date": "2024-12-23",
+          "revenue": 24523.77,
+          "orders": 78,
+          "avg_order_value": 314.4073076923077
+        }
+      ]
+    },
+    "orders": {
+      "iqr": {
+        "q1": 7.0,
+        "q3": 30.0,
+        "iqr": 23.0,
+        "lower": -27.5,
+        "upper": 64.5,
+        "anomaly_count": 20
+      },
+      "zscore": {
+        "mean": 22.7699,
+        "std": 22.1237,
+        "threshold": 3.0,
+        "anomaly_count": 8
+      },
+      "anomalous_days": [
+        {
+          "order_date": "2024-12-08",
+          "revenue": 18271.12,
+          "orders": 67,
+          "avg_order_value": 272.7032835820895
+        },
+        {
+          "order_date": "2024-12-11",
+          "revenue": 23017.27,
+          "orders": 68,
+          "avg_order_value": 338.48926470588236
+        },
+        {
+          "order_date": "2024-12-12",
+          "revenue": 21609.33,
+          "orders": 75,
+          "avg_order_value": 288.12440000000004
+        },
+        {
+          "order_date": "2024-12-13",
+          "revenue": 20937.87,
+          "orders": 65,
+          "avg_order_value": 322.1210769230769
+        },
+        {
+          "order_date": "2024-12-14",
+          "revenue": 19573.63,
+          "orders": 66,
+          "avg_order_value": 296.5701515151515
+        },
+        {
+          "order_date": "2024-12-15",
+          "revenue": 23922.99,
+          "orders": 75,
+          "avg_order_value": 318.9732
+        },
+        {
+          "order_date": "2024-12-17",
+          "revenue": 23589.99,
+          "orders": 71,
+          "avg_order_value": 332.25338028169017
+        },
+        {
+          "order_date": "2024-12-18",
+          "revenue": 20987.94,
+          "orders": 74,
+          "avg_order_value": 283.6208108108108
+        },
+        {
+          "order_date": "2024-12-20",
+          "revenue": 31466.97,
+          "orders": 104,
+          "avg_order_value": 302.56701923076923
+        },
+        {
+          "order_date": "2024-12-21",
+          "revenue": 20409.46,
+          "orders": 76,
+          "avg_order_value": 268.54552631578946
+        }
+      ]
+    },
+    "avg_order_value": {
+      "iqr": {
+        "q1": 274.0575,
+        "q3": 342.4552,
+        "iqr": 68.3977,
+        "lower": 171.461,
+        "upper": 445.0517,
+        "anomaly_count": 29
+      },
+      "zscore": {
+        "mean": 314.5065,
+        "std": 75.0591,
+        "threshold": 3.0,
+        "anomaly_count": 7
+      },
+      "anomalous_days": [
+        {
+          "order_date": "2024-01-10",
+          "revenue": 528.67,
+          "orders": 1,
+          "avg_order_value": 528.67
+        },
+        {
+          "order_date": "2024-01-26",
+          "revenue": 170.0,
+          "orders": 1,
+          "avg_order_value": 170.0
+        },
+        {
+          "order_date": "2024-01-27",
+          "revenue": 476.40999999999997,
+          "orders": 1,
+          "avg_order_value": 476.40999999999997
+        },
+        {
+          "order_date": "2024-01-28",
+          "revenue": 328.98,
+          "orders": 2,
+          "avg_order_value": 164.49
+        },
+        {
+          "order_date": "2024-01-31",
+          "revenue": 122.39999999999999,
+          "orders": 2,
+          "avg_order_value": 61.199999999999996
+        },
+        {
+          "order_date": "2024-02-01",
+          "revenue": 1111.14,
+          "orders": 2,
+          "avg_order_value": 555.57
+        },
+        {
+          "order_date": "2024-02-06",
+          "revenue": 1334.04,
+          "orders": 2,
+          "avg_order_value": 667.02
+        },
+        {
+          "order_date": "2024-02-09",
+          "revenue": 1258.08,
+          "orders": 2,
+          "avg_order_value": 629.04
+        },
+        {
+          "order_date": "2024-02-11",
+          "revenue": 50.4,
+          "orders": 1,
+          "avg_order_value": 50.4
+        },
+        {
+          "order_date": "2024-02-12",
+          "revenue": 1719.1399999999999,
+          "orders": 3,
+          "avg_order_value": 573.0466666666666
+        }
+      ]
+    }
+  },
+  "products": {
+    "margin_anomalies": {
+      "stats": {
+        "q1": 0.4374,
+        "q3": 0.579,
+        "iqr": 0.1417,
+        "lower": 0.2249,
+        "upper": 0.7916,
+        "anomaly_count": 0
+      },
+      "products": []
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "channels": [
+    {
+      "channel": "affiliate",
+      "total_orders": 445,
+      "total_revenue": 132504.73,
+      "total_margin": 63447.23,
+      "avg_order_value": 297.76,
+      "unique_customers": 95,
+      "revenue_pct": 0.0538,
+      "margin_pct": 0.4788
+    },
+    {
+      "channel": "email",
+      "total_orders": 971,
+      "total_revenue": 312199.86,
+      "total_margin": 147623.13,
+      "avg_order_value": 321.52,
+      "unique_customers": 213,
+      "revenue_pct": 0.1268,
+      "margin_pct": 0.4728
+    },
+    {
+      "channel": "organic",
+      "total_orders": 2565,
+      "total_revenue": 786771.43,
+      "total_margin": 374342.35,
+      "avg_order_value": 306.73,
+      "unique_customers": 575,
+      "revenue_pct": 0.3197,
+      "margin_pct": 0.4758
+    },
+    {
+      "channel": "paid_search",
+      "total_orders": 1884,
+      "total_revenue": 565744.91,
+      "total_margin": 270678.27,
+      "avg_order_value": 300.29,
+      "unique_customers": 398,
+      "revenue_pct": 0.2299,
+      "margin_pct": 0.4784
+    },
+    {
+      "channel": "referral",
+      "total_orders": 768,
+      "total_revenue": 239450.52,
+      "total_margin": 114682.86,
+      "avg_order_value": 311.78,
+      "unique_customers": 164,
+      "revenue_pct": 0.0973,
+      "margin_pct": 0.4789
+    },
+    {
+      "channel": "social",
+      "total_orders": 1382,
+      "total_revenue": 424662.11,
+      "total_margin": 202042.56,
+      "avg_order_value": 307.28,
+      "unique_customers": 280,
+      "revenue_pct": 0.1725,
+      "margin_pct": 0.4758
+    }
+  ]
+}
